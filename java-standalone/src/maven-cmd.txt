@@ -1,0 +1,9 @@
+mvn archetype:create -DgroupId=prototype -DartifactId=java-standalone -DpackageName=com
+mvn help:describe -Dplugin=idea
+mvn idea:idea
+mvn install
+mvn dependency:resolve
+mvn test
+mvn assembly:assembly
+
+java -cp project-jar-with-dependencies.jar com.App
