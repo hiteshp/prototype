@@ -1,0 +1,15 @@
+mvn archetype:create -DgroupId=prototype -DartifactId=java-standalone -DpackageName=com
+mvn help:describe -Dplugin=idea
+mvn idea:idea
+mvn install
+mvn dependency:resolve
+mvn test
+mvn assembly:assembly
+
+
+java -cp project-jar-with-dependencies.jar com.App
+
+//web
+mvn clean install
+mvn tomcat:run  //from web project directory will deploy and start tomcat
+
